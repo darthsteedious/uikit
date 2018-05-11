@@ -1,0 +1,30 @@
+{
+  "name": "uikit",
+  "version": "0.1.0",
+  "description": "General purpose React/SCSS UIKit",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/darthsteedious/uikit.git",
+  "author": "Ed McDonald <darthsteedious@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darthsteedious/uikit/issues"
+  },
+  "homepage": "https://github.com/darthsteedious/uikit#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "webpack": "^4.8.1",
+    "webpack-cli": "^2.1.3"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2"
+  }
+}
