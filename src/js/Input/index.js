@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import './_input.scss';
 
 export default function Input(props) {
-  const { className, id, type, onChange, onFocus, onBlur, value } = props;
+  const { className, id, type, onChange, onFocus, onBlur, value, parentRef } = props;
   return (
-    <input className={classNames('input', className)} id={id} onChange={onChange}
-           type={type} value={value} />
+    <input className={classNames('input', className)} id={id}
+           onChange={onChange} onFocus={onFocus} onBlur={onBlur}
+           type={type} value={value} ref={parentRef}/>
   );
 }
 

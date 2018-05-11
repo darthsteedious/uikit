@@ -1,0 +1,8 @@
+@import '~scss/mixins/all';
+@import '~scss/variables/all';
+
+input, .input {
+  width: 100%;
+  border: 1px solid $grey;
+}
+

@@ -1,1 +1,22 @@
-@import '~scss/mixins/font';
+@import '~scss/variables/_font';
+
+@mixin font-size($size) {
+  font-family: $font-family;
+  font-size: $size;
+  letter-spacing: -0.05px;
+}
+
+@mixin font-light($size) {
+  @include font-size($size);
+  font-weight: 300;
+}
+
+@mixin font-medium($size) {
+  @include font-size($size);
+  font-weight: 400;
+}
+
+@mixin font-semibold($size) {
+  @include font-size($size);
+  font-weight: 500;
+}
