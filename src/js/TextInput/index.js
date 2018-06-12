@@ -1,34 +1,59 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import {compose, ident, unwrapEventValue} from 'js/util';
+import {ident} from 'js/util';
 import Input from 'js/Input';
 import LabelGroup from 'js/LabelGroup';
+
 import './_textinput.scss';
 
-export default class TextInput extends React.Component {
-  renderWithLabel = () => {
-    const {labelText, id} = this.props;
+const TextInput = React.forwardRef((props, ref) => {
+  const {className, id, labelText, onBlur, onFocus, onChange, placeholder, style, value} = props;
+
+  const textInput = (
+    <Input className={classNames('text', className)} id={id}
+           onBlur={onBlur} onFocus={onFocus} onChange={onChange}
+           ref={ref} placeholder={placeholder}
+           type="text" value={value} style={style}/>
+  );
+
+  if (labelText) {
     return (
       <LabelGroup htmlFor={id} text={labelText}>
-        {this.renderTextInput()}
+        {textInput}
       </LabelGroup>
     )
-  };
-
-  renderTextInput = () => {
-    const {className, id, onBlur, onFocus, onChange, ref, placeholder, style, value} = this.props;
-    return (
-      <Input className={classNames('text', className)} id={id}
-             onBlur={onBlur} onFocus={onFocus} onChange={compose(onChange, unwrapEventValue)}
-             ref={ref} placeholder={placeholder}
-             type="text" value={value} style={style}/>
-    );
-  };
-
-  render() {
-    return this.props.labelText ? this.renderWithLabel() : this.renderTextInput();
   }
-}
+
+  return textInput;
+});
+
+export default TextInput;
+
+// export default class TextInput extends React.Component {
+//   renderWithLabel = () => {
+//     const {labelText, id} = this.props;
+//     return (
+//       <LabelGroup htmlFor={id} text={labelText}>
+//         {this.renderTextInput()}
+//       </LabelGroup>
+//     )
+//   };
+//
+//   renderTextInput = () => {
+//     const {className, id, onBlur, onFocus, onChange, ref, placeholder, style, value} = this.props;
+//     return (
+//       <Input className={classNames('text', className)} id={id}
+//              onBlur={onBlur} onFocus={onFocus} onChange={compose(onChange, unwrapEventValue)}
+//              ref={ref} placeholder={placeholder}
+//              type="text" value={value} style={style}/>
+//     );
+//   };
+//
+//   render() {
+//     return this.props.labelText ? this.renderWithLabel() : this.renderTextInput();
+//   }
+// }
 
 TextInput.propTypes = {
   className: PropTypes.string,

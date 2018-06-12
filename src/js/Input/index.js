@@ -4,14 +4,15 @@ import classNames from 'classnames';
 import {ident} from 'js/util';
 import './_input.scss';
 
-export default function Input(props) {
-  const {alt, checked, className, id, type, max, min, onChange, onClick, onFocus, onBlur, placeholder, ref, src, value } = props;
+const Input = React.forwardRef((props, ref) => {
+  const {alt, checked, className, id, type, max, min, onChange, onClick, onFocus, onBlur, placeholder, src, value} = props;
   return (
     <input className={classNames('input', className)} id={id} checked={checked}
-           onChange={onChange} onFocus={onFocus} onBlur={onBlur} onClick={onClick}
+           onChange={onChange} onFocus={onFocus} onBlur={onBlur} onClick={onClick} max={max} min={min}
            placeholder={placeholder} type={type} value={value} ref={ref} src={src} alt={alt}/>
   );
-}
+});
+
 
 Input.propTypes = {
   alt: PropTypes.string,
@@ -32,7 +33,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  alt: '',
+  alt: null,
   id: null,
   className: null,
   checked: false,
@@ -41,8 +42,10 @@ Input.defaultProps = {
   onBlur: ident,
   onClick: ident,
   onFocus: ident,
-  placeholder: '',
-  src: '',
+  placeholder: null,
+  src: null,
   style: {},
   type: 'text',
 };
+
+export default Input;

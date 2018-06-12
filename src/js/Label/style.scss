@@ -1,0 +1,10 @@
+@import '~scss/variables/all';
+
+.label, label {
+  display: inline-block;
+  width: auto;
+  font-family: $font-family;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.4rem;
+}

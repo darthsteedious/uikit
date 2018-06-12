@@ -7,7 +7,6 @@ import render from "stories/render";
 const ImageSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/SIPI_Jelly_Beans_4.1.07.tiff/lossy-page1-256px-SIPI_Jelly_Beans_4.1.07.tiff.jpg';
 
 storiesOf('Input', module)
-  .add('type="text" (default)', render(<Input onChange={ident} value=""/>))
   .add('type="button"', render(<Input type="button" onChange={ident} onClick={ident} value="Button"/>))
   .add('type="checkbox"', render(<Input type="checkbox" onChange={ident} value="" checked/>))
   .add('type="color"', render(<Input type="color" onChange={ident} value="#00FF00"/>))
@@ -26,6 +25,7 @@ storiesOf('Input', module)
   .add('type="search"', render(<Input type="search" onChange={ident} value=""/>))
   .add('type="submit"', render(<form><Input type="submit" onChange={ident} value="Submit"/></form>))
   .add('type="tel"', render(<Input type="tel" onChange={ident} value="+1-555-555-5555" />))
+  .add('type="text" (default)', render(<Input onChange={ident} value=""/>))
   .add('type="time"', render(<Input type="time" onChange={ident} value="11:30" />))
   .add('type="url"', render(<Input type="url" onChange={ident} value="http://www.example.com" />))
   .add('type="week"', render(<Input type="week" onChange={ident} value="2018-W26" />));

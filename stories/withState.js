@@ -39,24 +39,22 @@ class StatefulWrapper extends React.Component {
   };
 
   render() {
-    const { onBlur, onChange, onFocus } = this;
-    const { render } = this.props;
-    const { value, focused } = this.state;
+    const {onBlur, onChange, onFocus} = this;
+    const {render} = this.props;
 
     return render({
+      ...this.state,
       onBlur,
       onChange,
       onFocus,
-      value,
-      focused,
     })
   }
 }
 
 export const withState = (render, initialState) => (
-  <StatefulWrapper render={render} initialState={initialState} />
+  <StatefulWrapper render={render} initialState={initialState}/>
 );
 
-export const renderWithState = (func, initialState={}) => render(withState(func, initialState));
+export const renderWithState = (func, initialState = {}) => render(withState(func, initialState));
 
 export default withState;

@@ -4,7 +4,13 @@
 input, .input {
   border: 1px solid $grey;
   border-radius: 0;
-  @include font-medium(1.2rem);
+  line-height: 1;
+  height: 32px;
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.6rem;
 
   &.disabled, &[disabled] {
     opacity: .2;

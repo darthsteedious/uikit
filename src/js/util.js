@@ -11,4 +11,4 @@ export const isNullOrUndefined = (x) => isNull(x) || isUndefined(x);
 export const defaultWith = (x, fallback) => isNullOrUndefined(x) ? fallback : x;
 
 // Events
-export const unwrapEventValue = (e) => e.target.value;
+export const unwrapEventValue = (e) => e.target ? e.target.value : e;

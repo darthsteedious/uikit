@@ -10,7 +10,7 @@ const ExtractCSS = new ExtractTextPlugin({
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname, './src/config.js'),
+  entry: path.resolve(__dirname, './src/index.js'),
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: "uikit.js",

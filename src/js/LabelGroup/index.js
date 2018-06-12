@@ -4,7 +4,7 @@ import Label from 'js/Label';
 import './style.scss';
 
 export default function LabelGroup(props) {
-  const {htmlFor, text} = props;
+  const {children, htmlFor, text} = props;
   return (
     <div className="label-group">
       <Label htmlFor={htmlFor}>{text}</Label>
