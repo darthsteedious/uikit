@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import LabelGroup from 'js/LabelGroup';
+import Label from 'js/Label';
 
 export default (labelPropsSelector) => (Wrapped) => class DecoratedWithLabel extends React.Component {
   static propTypes = {
@@ -12,12 +12,13 @@ export default (labelPropsSelector) => (Wrapped) => class DecoratedWithLabel ext
   };
 
   renderWithLabel() {
-    const { text, htmlFor, className = '' } = labelPropsSelector(this.props);
+    const {text, htmlFor, className = ''} = labelPropsSelector(this.props);
 
     return (
-      <LabelGroup className={className}  htmlFor={htmlFor} text={text} >
+      <div className="label-control">
+        <Label className={className} htmlFor={htmlFor}>{text}</Label>
         <Wrapped {...this.props} />
-      </LabelGroup>
+      </div>
     )
   }
 
