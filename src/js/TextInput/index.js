@@ -2,11 +2,11 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Input from 'js/Input';
-import labelGroup from 'js/decorators/labelGroup';
+import withLabel from 'js/decorators/withLabel';
 
 import './_textinput.scss';
 
-@labelGroup(p => ({
+@withLabel(p => ({
   htmlFor: p.id,
   text: p.labelText,
   className: ''

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import LabelGroup from 'js/LabelGroup';
 
-export default (labelPropsSelector) => (Wrapped) => class LabelGroupControl extends React.Component {
+export default (labelPropsSelector) => (Wrapped) => class DecoratedWithLabel extends React.Component {
   static propTypes = {
     labelClassName: PropTypes.string,
   };
